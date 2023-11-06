@@ -1,0 +1,60 @@
+#node-holder {
+    display: grid;
+
+    height: 90vh;
+    max-width: 90vw;
+    aspect-ratio: 1;
+
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 10px;
+}
+
+.node {
+    transition: ease-in-out 0.2s;
+    color: black;
+    display: flex;
+}
+.node:hover {
+    background-color: var(--accent);
+}
+
+.unchecked {
+    background-color: white;
+}
+.checked {
+    background-color: var(--secondary);
+}
+
+.txt {
+    width: 98%;
+    margin: auto;
+    transition: ease-in-out 0.2s;
+    text-align: center;
+    vertical-align: center;
+    user-select: none;
+}
+
+.txtChecked {
+    color: white;
+}
+.txtUnchecked {
+    color: black;
+}
+
+/* randomize button */
+
+#randomizer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    aspect-ratio: 1;
+    margin: 10px;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    filter: invert();
+}
