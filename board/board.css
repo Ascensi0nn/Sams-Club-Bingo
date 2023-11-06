@@ -48,9 +48,19 @@
     position: absolute;
     top: 0;
     right: 0;
-    width: 100px;
+    width: 85px;
     aspect-ratio: 1;
-    margin: 10px;
+    margin: 5vh;
+}
+
+.box-rotate {
+    animation: spin 1s;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 img {

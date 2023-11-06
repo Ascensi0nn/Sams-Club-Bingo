@@ -7,6 +7,9 @@ const sayings = [
     "Gio says 'what would you do'",
     "Gio sucks dick",
     "Gio says 'Period'",
+    "Gio wears a sweater",
+    "Gio complains about his discrete professor",
+    "Gio tells you to burn in hell",
 
     "Jaysen acts gay",
     "Jaysen says 'I swear!'",
@@ -14,11 +17,13 @@ const sayings = [
     "Jaysen says he loves something",
     "Jaysen recognizes the most obscure reference",
     "Jaysen spits the most random fact ever",
+    "Jaysen shows up late to pickleball",
 
     "Jack mentions a programming term",
     "Jack finishes a meal (impossible)",
     "Jack codes for 24 hours straight and doesn't consume a thing",
     "Jack starts his day off with a lobster bisque from Nathan's",
+    "Jack gets pestered for coding help",
     
     "DJ sends the most vile shit known to man",
     
@@ -27,9 +32,23 @@ const sayings = [
     "Amy dyes her hair a new color",
     "Amy sticks her tongue out (scaring Jack and Owen)",
     "Amy sleeps through Chem",
+
+    "Max goes to commons for dinner",
+    "Max goes AWOL for a whole day",
+    "Max play Mario Kart for > 5 hours",
     
     "Owen eats shit on skateboard",
     "Owen purchases the most useless tech product known to man",
+    "Owen wears goldfish hat",
+
+    "Mary Ann farts all over the place",
+    "Mary Ann complains about her fart classes",
+    "Mary Ann overdresses for the occasion",
+    "Mary's phone is at 1%",
+    "Mary Ann takes obscene amount of photos",
+    "Mary is cold",
+
+    "Clark studies in Owen's room",
     
     "Sam disappears for weeks at a time",
     "Sam asks us to meet on the Greek lawn at 5am",
@@ -37,16 +56,24 @@ const sayings = [
     "Yoav says 'WHAAAAT'",
     "Yoav claps his hands like a seal",
     "Yoav buys another flash drive",
+    "Yoav plays AMQ",
+    "Yoav throws up",
     
     "Dante eats something vegan",
+    "Dante stiffly nods",
     
     "Kiera plays that rhythm game",
     "Kiera wears green",
     "Kiera sarcastically laughs loudly in public",
     "Kiera does the 'um actually!' voice",
+    "Kiera gets Starbucks",
+
+    "Mikey gets high as a whistle",
+    "Mikey doesn't remember the weekend",
 
     "Evan corrects your correct statement",
     "Parker spawns",
+    "Parker rips your throat out",
 
     "ShitBot reacts to your innocent message",
     "HeySam corrects your grammar",
@@ -56,7 +83,7 @@ const sayings = [
 function createBoard() {
     for (let i = 0; i < numOfNodes; i++) {
         const node = document.createElement('div');
-        const nodeTxt = document.createElement('p')
+        const nodeTxt = document.createElement('p');
 
         node.classList.add('node');
         node.classList.add('unchecked');
@@ -109,5 +136,18 @@ function randomizeNodes() {
 document.getElementById('randomizer').addEventListener('click', () => {
     randomizeNodes();
 });
+
+
+let timeout = null;
+const shuffle = document.getElementById('randomizer');
+shuffle.addEventListener('mouseover', function(e) {
+    if(timeout !== null) return;
+    e.target.classList.add('box-rotate');
+    timeout = setTimeout(function() {
+        e.target.classList.remove('box-rotate');
+        timeout = null;
+    }, 1000);
+});
+
 
 createBoard();
