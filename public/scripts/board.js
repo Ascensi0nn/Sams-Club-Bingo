@@ -18,13 +18,15 @@ const sayings = [
     "Jack mentions a programming term",
     "Jack finishes a meal (impossible)",
     "Jack codes for 24 hours straight and doesn't consume a thing",
+    "Jack starts his day off with a lobster bisque from Nathan's",
     
     "DJ sends the most vile shit known to man",
     
     "Amy laughs like a lawn mower",
-    "Amy pulls up",
+    "Amy pulls up in her moped",
     "Amy dyes her hair a new color",
     "Amy sticks her tongue out (scaring Jack and Owen)",
+    "Amy sleeps through Chem",
     
     "Owen eats shit on skateboard",
     "Owen purchases the most useless tech product known to man",
@@ -34,6 +36,7 @@ const sayings = [
     
     "Yoav says 'WHAAAAT'",
     "Yoav claps his hands like a seal",
+    "Yoav buys another flash drive",
     
     "Dante eats something vegan",
     
