@@ -1,17 +1,17 @@
 #node-holder {
     display: grid;
 
-    height: 90vh;
     max-width: 90vw;
     aspect-ratio: 1;
 
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(5, 1fr);
-    gap: 10px;
 }
 
 .node {
     transition: ease-in-out 0.2s;
+    width: 100%;
+    height: 100%;
     color: black;
     display: flex;
 }
@@ -42,29 +42,15 @@
     color: black;
 }
 
-/* randomize button */
-
-#randomizer {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 85px;
-    aspect-ratio: 1;
-    margin: 5vh;
+h1 {
+    margin-bottom: 0;
 }
 
-.box-rotate {
-    animation: spin 1s;
-}
+/* timing shit */
 
-@keyframes spin {
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-img {
-    width: 100%;
-    height: 100%;
-    filter: invert();
+#reset {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
 }

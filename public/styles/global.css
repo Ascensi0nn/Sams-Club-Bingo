@@ -72,8 +72,39 @@ img {
 
 .container {
     display: flex;
+    max-width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100%;
+    text-align: center;
+}
+
+@media screen and (min-width: 810px){
+    :root {
+        --p: 1rem;
+    }
+    #node-holder {
+        gap: 0.5rem;
+    }
+    .container {
+        max-width: 50%;
+    }
+}
+@media screen and (max-width: 809px){
+    :root {
+        --p: 0.8rem;
+    }
+    #node-holder {
+        gap: 0.3rem;
+    }
+}
+@media screen and (max-width: 500px){
+    :root {
+        --p: 0.6rem;
+    }
+    #node-holder {
+        gap: 0.1rem;
+    }
 }
