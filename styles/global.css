@@ -161,6 +161,9 @@ img {
     #node-holder {
         gap: 0.15rem;
     }
+    .container {
+        max-width: 95%;
+    }
 }
 @media screen and (max-width: 295px){
     :root {
@@ -168,8 +171,5 @@ img {
     }
     #node-holder {
         gap: 0.1rem;
-    }
-    .container {
-        max-width: 95%;
     }
 }
