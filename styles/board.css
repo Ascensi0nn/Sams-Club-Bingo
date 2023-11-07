@@ -1,0 +1,126 @@
+@keyframes minify {
+    from {
+        transform: scale(100%);
+        opacity: 1;
+    }
+    to {
+        transform: scale(70%);
+        opacity: 0.5;
+    }
+}
+@keyframes maxify {
+    from {
+        transform: scale(70%);
+        opacity: 0.5;
+    }
+    to {
+        transform: scale(100%);
+        opacity: 1;
+    }
+}
+
+#node-holder {
+    display: grid;
+
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+}
+
+.node {
+    transition: ease-in-out 0.2s;
+    width: 100%;
+    height: 100%;
+    color: black;
+    display: flex;
+}
+.node:hover {
+    background-color: var(--accent);
+}
+
+.unchecked {
+    background-color: white;
+}
+.checked {
+    background-color: var(--secondary);
+}
+
+.txt {
+    width: 98%;
+    margin: auto;
+    transition: ease-in-out 0.2s;
+    text-align: center;
+    vertical-align: center;
+    user-select: none;
+}
+
+.txtChecked {
+    color: white;
+}
+.txtUnchecked {
+    color: black;
+}
+
+.container h1 {
+    margin-bottom: 0;
+}
+
+/* timing shit */
+
+#reset {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+#time {
+    font-family: monospace;
+}
+
+/* winner shit */
+@keyframes enterFromTop {
+    from {
+        transform: translate(0%, -100%);
+    }
+    to {
+        transform: translate(0);
+    }
+}
+@keyframes exitToTop {
+    from {
+        transform: translate(0);
+    }
+    to {
+        transform: translate(0%, -100%);
+    }
+}
+
+.winner-container {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    transform: translate(0, -100%);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    z-index: 3;
+}
+
+.back {
+    width: 10vw;
+    aspect-ratio: 5/2;
+    background-color: var(--accent);
+    color: var(--text);
+    border-radius: 100px;
+    border: transparent;
+    font-size: var(--h4);
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}

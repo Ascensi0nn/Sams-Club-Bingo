@@ -88,6 +88,7 @@ const sayings = [
 
     "ShitBot reacts to your innocent message",
     "HeySam corrects your grammar",
+    "Someone references Shoresy",
 ]
 
 
@@ -116,6 +117,7 @@ function createBoard() {
                 nodeTxt.classList.remove('txtUnchecked');
                 board[i]['checked'] = 'checked';
                 board[i]['txtChecked'] = 'txtChecked';
+                checkForWin();
             }
             localStorage.setItem('boardOrder', JSON.stringify(board));
         });
@@ -199,6 +201,93 @@ function randomizeNodes() {
 
     board = nodes;
     localStorage.setItem('boardOrder', JSON.stringify(nodes));
+}
+
+function checkRowCol(check) {
+    for (let col = 0; col < 5; col++) {
+        let arr = []
+        for (let row = 0; row < 5; row++) {
+            let id = 0;
+            id = (check == 'row') ? 
+            id = row + (5 * col):
+            id = col + (5 * row);
+            
+            const node = document.getElementById('node-' + id);
+            if (node.classList.contains('checked')) {
+                arr.push('checked');
+            }
+        }
+        if (arr.length == 5) {
+            return true;
+        }
+    }
+    return false;
+}
+
+function checkDiagnoal(dir) {
+    const nodes = document.getElementsByClassName('node');
+    let arr = [];
+    let increase = 0;
+    let start = 0;
+
+    if (dir == 'toRight') {
+        increase = 6;
+        start = 0;
+    }
+    else {
+        increase = 4;
+        start = 4;
+    }
+
+    for (let i = start; i <= 24; i+=increase) {
+        if (nodes[i].classList.contains('checked')) {
+            arr.push('checked');
+        }
+    }
+    return arr.length == 5;
+}
+
+function checkForWin() {
+    if (checkRowCol('row') || 
+    checkRowCol('col') ||
+    checkDiagnoal('toRight') ||
+    checkDiagnoal('toLeft')) {
+        console.log('win')
+        triggerWin();
+    }
+}
+
+async function triggerWin() {
+    const container = document.querySelector('.container');
+    const winnerContainer = document.querySelector('.winner-container');
+
+    document.getElementById('winnerButton').addEventListener('click', async () => {
+        winnerContainer.style.pointerEvents = 'none';
+        winnerContainer.style.animation = 'exitToTop 1s';
+        setTimeout(() => {
+            winnerContainer.style.transform= 'translate(0, -100%)';
+        }, 1000);
+        container.style.pointerEvents = 'all';
+        container.style.animation = 'maxify 1s';
+    });
+
+    container.style.pointerEvents = 'none';
+    winnerContainer.style.pointerEvents = 'all';
+    
+    await delay(1000);
+    container.style.animation = 'minify 1s forwards';
+    
+    await delay(1000);
+    winnerContainer.style.animation = 'enterFromTop 1s';
+    setTimeout(() => {
+        winnerContainer.style.transform= 'translate(0)';
+    }, 1000);
+}
+
+function delay(milliseconds){
+    return new Promise(resolve => {
+        setTimeout(resolve, milliseconds);
+    });
 }
 
 const runTimer = () => {
