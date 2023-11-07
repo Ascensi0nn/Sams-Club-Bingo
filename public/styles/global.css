@@ -81,30 +81,81 @@ img {
     text-align: center;
 }
 
-@media screen and (min-width: 810px){
+@media screen and (min-width: 1460px){
     :root {
         --p: 1rem;
     }
     #node-holder {
         gap: 0.5rem;
+        aspect-ratio: 1;
     }
     .container {
         max-width: 50%;
     }
 }
-@media screen and (max-width: 809px){
+@media screen and (max-width: 1459px){
     :root {
-        --p: 0.8rem;
+        --p: 1rem;
+    }
+    #node-holder {
+        gap: 0.4rem;
+        aspect-ratio: 1;
+    }
+    .container {
+        max-width: 70%;
+    }
+}
+@media screen and (max-width: 1034px){
+    :root {
+        --p: 0.9rem;
     }
     #node-holder {
         gap: 0.3rem;
     }
+    .container {
+        max-width: 80%;
+    }
 }
-@media screen and (max-width: 500px){
+@media screen and (max-width: 817px){
+    :root {
+        --p: 0.8rem;
+    }
+    #node-holder {
+        gap: 0.2rem;
+    }
+    .container {
+        max-width: 85%;
+    }
+}
+@media screen and (max-width: 682px){
+    :root {
+        --p: 0.7rem;
+    }
+}
+@media screen and (max-width: 587px){
     :root {
         --p: 0.6rem;
     }
     #node-holder {
-        gap: 0.1rem;
+        gap: 0.15rem;
+    }
+    .container {
+        max-width: 90%;
+    }
+}
+@media screen and (max-width: 470px){
+    :root {
+        --p: 0.7rem;
+    }
+    #node-holder {
+        gap: 0.2rem;
+    }
+    .container {
+        max-width: 85%;
+    }
+}
+@media screen and (max-width: 470px){
+    :root {
+        --p: 0.6rem;
     }
 }
