@@ -158,4 +158,18 @@ img {
     :root {
         --p: 0.6rem;
     }
+    #node-holder {
+        gap: 0.15rem;
+    }
+}
+@media screen and (max-width: 295px){
+    :root {
+        --p: 0.5rem;
+    }
+    #node-holder {
+        gap: 0.1rem;
+    }
+    .container {
+        max-width: 95%;
+    }
 }
